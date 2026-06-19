@@ -37,7 +37,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         repository: MP01-LineageOS/vendor_hardware_overlay
-        ref: pie
+        ref: lineage-23.2
         token: ${{ secrets.MP01_SECRET }}
         path: vendor_hardware_overlay
 
@@ -49,4 +49,4 @@ jobs:
         cd vendor_hardware_overlay
         git add TrebleApp/app.apk
         git commit -m "Up TrebleApp to TrebleDroid/treble_app@${{ steps.latest_commit.outputs.hash }}" || echo "No changes to commit"
-        git push origin pie
+        git push origin HEAD:lineage-23.2
